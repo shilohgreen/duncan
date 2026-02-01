@@ -4,5 +4,23 @@
     "version": "1.0.0",
     "title": "My Zuplo API"
   },
-  "paths": {}
+  "paths": {
+    "/hello": {
+      "get": {
+        "summary": "Hello World",
+        "description": "A simple hello world endpoint",
+        "operationId": "hello-world",
+        "x-zuplo-route": {
+          "corsPolicy": "none",
+          "handler": {
+            "export": "default",
+            "module": "$import(./modules/hello-world)"
+          },
+          "policies": {
+            "inbound": []
+          }
+        }
+      }
+    }
+  }
 }
